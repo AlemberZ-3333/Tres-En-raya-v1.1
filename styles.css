@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    max-height: 500px;
+    max-width: 500px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212; /* Color de fondo oscuro */
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.title {
+    font-size: 3em;
+    margin-bottom: 30px;
+}
+
+.menu {
+    position: center; /* Asegura que los símbolos se posicionen relativos a este contenedor */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu-button {
+    background: linear-gradient(135deg, #ff4500, #ff0000);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    position: relative; /* Añadido para que los símbolos pasen detrás */
+    z-index: 1; /* Añadido para asegurar que estén delante de los símbolos */
+}
+
+.menu-button:hover {
+    background: linear-gradient(135deg, #ff0000, #ff4500);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.menu-button:active {
+    animation: bounce 0.2s;
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Animación de lluvia */
+@keyframes rainingSymbols {
+    0% {
+        transform: translateY(200px) rotate(0deg) scale(0.7);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(480px) rotate(360deg) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(700px) rotate(720deg) scale(0.7);
+        opacity: 0;
+    }
+}
+
+/* Estilos para los símbolos X y O */
+.symbol {
+    position: absolute;
+  align-content: -200px;
+    top: -200px;
+    font-size: 2em;
+    color: rgba(255, 255, 255, 0.7);
+    pointer-events: auto;
+    animation: rainingSymbols 5s linear infinite;
+    z-index: 0; /* Asegura que los símbolos estén detrás de los botones */
+}
+
+.symbol:nth-child(2n) {
+    color: rgba(255, 69, 0, 0.7); /* Cambia el color para los O */
+}

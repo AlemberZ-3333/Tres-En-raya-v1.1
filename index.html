@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tres en Raya - Menú Principal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="title">Tres En Raya</div>
+      
+        <div class="menu">
+            <button class="menu-button" onclick="startTwoPlayers()">Dos Jugadores (modo local)</button>
+            <button class="menu-button" onclick="redirectToIA()">Contra IA</button>
+        </div>
+    </div>
+
+    <!-- Símbolos de animación -->
+    <div class="symbol-container">
+        <!-- Mantén los símbolos de animación del menú principal aquí -->
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function startTwoPlayers() {
+            window.location.href = "_game_/pvp/game.html"; // Redirige a la página de dos jugadores
+        }
+
+        function redirectToIA() {
+            window.location.href = "_game_/ia/ia/index.html"; // Redirige a la página de selección de dificultad de IA
+        }
+    </script>
+</body>
+</html>
